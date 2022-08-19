@@ -1,0 +1,202 @@
+<!声明版本 HTML5>
+<!DOCTYPE html>
+<html>
+<head>
+<!utf-8设置可以在页面正确显示中文>
+<meta charset="utf-8">
+<!title出现在页面标签>
+<title>LISA学JS(nothing.com)</title>
+<style type="text/css">
+    h4 {color:red;}
+    p {color:rgb(12, 164, 200);}
+    </style>
+</head>
+
+<!body部分为可见的页面内容>
+<body>
+
+<h3>JS演示--JSON && AJAX 27/11/2021</h3>
+<button onclick="loadJSON()">Get JSON</button>
+<div id="json-content"></div>
+
+<script>
+//...27/11/2021 待掌握，读懂代码 LISA
+function loadJSON() {
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function(){
+		if(this.readyState==4 && this.status==200)
+		{
+			displayDate(this);
+		}
+	};
+	xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts/", true);
+	xhttp.send();
+}
+function displayDate(xhttp)
+{
+	jsonData = JSON.parse(xhttp.responseText);
+	var newContent = "";
+	for(index in jsonData){
+		newContent += "<p>" + jsonData[index].body + "</p>";
+	}
+	document.getElementById("json-content").innerHTML = newContent;
+}
+</script>
+
+<h3>JS演示--HTMLCollection</h3>
+<button onclick="changePColor()">修改 p 元素的背景颜色</button>
+
+<script type = "text/javascript">
+function changePColor() {
+	//HTML DOM 集合，有length属性，可通过索引来引用
+	var myCollection = document.getElementsByTagName("p");
+	var i;
+	for (i = 0; i < myCollection.length; i++) {
+		myCollection[i].style.color = "red";
+	}
+}
+</script>
+
+<h3>JS演示--typeof</h3>
+<p onclick="disType()">点击显示 typeof 元素.函数:</p>
+<p id="demoTp"> ？</p>
+<script>
+	function disType()
+	{
+		var ele = document.getElementById("demoTp");
+		
+		var isLis, isAttach;
+		isLis = typeof(ele.addEventListener)
+		isAttach = typeof(ele.attachEvent);
+		//自动类型转化: function-->true, undefined-->false
+		if (ele.addEventListener) {                  // 所有主流浏览器，除了 IE 8 及更早版本		
+		}
+		else if (ele.attachEvent) {                  // IE 8 及更早版本
+		}
+
+		ele.innerHTML = "addEventListener: " + isLis + "; attachEvent:" + isAttach;
+	}
+</script>
+
+<h3>JS演示--使用DOM增加、删除、替换节点</h3>
+<div id="div1">
+	<p id="p1">这是一个段落p1。</p>
+	<p id="p2">这是另外一个段落p2。</p>        
+</div>
+			
+<script>
+var para = document.createElement("p");                    //创建p元素
+var node = document.createTextNode("这是一个新的段落pNew。"); //创建文本节点
+para.appendChild(node);                                    //将节点添加到元素中
+	
+var parent = document.getElementById("div1");
+//1.添加元素，在尾部，多次执行只增加一个节点，新节点无样式，旧节点使用style内联样式
+parent.appendChild(node);
+
+var child = document.getElementById("p1");
+//2.添加元素，在指定位置
+parent.insertBefore(node,child);
+//3.删除元素：DOM 需要清楚您需要删除的元素，以及它的父元素。
+//parent.removeChild(child); 
+//下面语句与上面的执行效果相同
+//child.parentElement.remove(child);
+//4.替换元素，执行后新的节点保留旧节点的样式
+var child2 = document.getElementById("p2");
+parent.replaceChild(para, child2);
+</script>
+
+<h3 id="id1">JS演示程序--按钮触发事件</h3>
+<!简单的JS处理语句可以直接写在标签中>
+<button type="button" onclick="document.getElementById('id1').style.color='red'">修改上面标题</button>
+
+<!标题也可以点击哦>
+<h3 onclick="this.innerHTML='Ooops!'">JS演示程序--点击标题</h3>
+
+<h3>JS演示程序--函数的使用</h3>	
+<! 注意：>
+<! 1. 点击button调用函数，函数名两处使用>
+<! 2. ID的使用（“demo”），两处>
+<p>点击下面的按钮，循环遍历对象 "person" 的属性，并且修改字体颜色，JS函数嵌套调用。</p>
+<button onclick="loopObj()">点击这里</button>
+<p id="demoLoop"></p>
+
+<h3>JS演示程序--显示日期</h3>	
+<! 注意：>
+<! 1. 点击button调用函数，函数名两处使用>
+<! 2. ID的使用（“demo”），两处>
+<button type="button" onclick="displayDate()">显示日期</button>
+<p id="demoDate">"def"</p>
+
+<h3>JS演示程序--DOM与用户交互</h3>
+<p>alert，confirm，prompt方法</p>
+<!按钮上的名字不能用JS中的系统函数名，如alert，否则调用不成功>
+<button onclick="funAlert()">提醒</button>
+<button onclick="funConfirm()">是非确认</button>
+
+<button onclick="funPrompt()">内容确认</button>
+
+<h3>JS演示程序--DOM之Navigator: the Browser Info</h3>
+<button onclick="funNavigator()">Navigator对象</button>
+<p id="nav"></p>
+
+<script type="text/javasript" src="./ReactTest.js">
+
+function funNavigator()
+{
+	var x=navigator.appName + " " + navigator.language + " " + navigator.platform;
+	document.getElementById("nav").innerHTML = x;
+}
+
+function funAlert()
+{
+	debugger
+	//调用下面语句会覆盖掉页面全部内容
+	//document.write("查bug");
+	debugger
+	alert("时间最珍贵！");
+}
+function funConfirm()
+{
+	var x = confirm("Continue?");
+}
+function funPrompt()
+{
+	var x = prompt("Your Name?", "LISA");
+}
+
+
+function loopObj(){
+	var x;
+	var txt="";
+	var person={fname:"Bill",lname:"Gates",age:56}; 
+	for (x in person){
+		debugger
+		txt=txt + person[x] + " ";
+	}
+	document.getElementById("demoLoop").innerHTML=txt;
+	changeColor();
+}
+
+function changeColor(){
+	var x=document.getElementById("demoLoop");
+	x.style.color = "#ff0000" //改变样式
+}
+
+function displayDate(){
+	debugger
+	//Date对象
+	var data1 = Date();
+	debugger
+	document.getElementById("demoDate").innerHTML=data1;
+}
+
+const today = new Date();
+
+function formatDate(date) {
+  return new Intl.DateTimeFormat(
+    'en-US',
+    { weekday: 'long' }
+  ).format(date);
+}
+
+</script>
