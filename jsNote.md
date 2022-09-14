@@ -3441,6 +3441,24 @@ complete
 <!-- 高效的写法：将 DOMContentLoaded 写在 head /script 里面 -->
 ```
 
+##### Demo - Object.freeze()
+
+Freezing an object [prevents extensions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/preventExtensions) and makes existing properties non-writable and non-configurable.
+
+```javascript
+const obj = {
+  prop: 42
+};
+
+Object.freeze(obj);
+
+obj.prop = 33;
+// Throws an error in strict mode
+
+console.log(obj.prop);
+// expected output: 42
+```
+
 
 
 ##### P137~139 类的操作 & 二级菜单（练习）
@@ -4158,177 +4176,6 @@ console.log();
 console.log('These are the devDependencies that we use:');
 console.log('  ' + Object.keys(pkg.devDependencies).join('\n  '));
 
-```
-
-
-
-### NodeJS=Node
-
-前端 JavaScript + NodeJS = 后端 JavaScript
-
-Node（JavaScript的服务器运行环境）
-
- = JavaScript虚拟机 && 工具库
-
-Node内部采用Google V8 引擎（对JavaScript进行解释） + libuv（调度系统资源的库）
-
-#### Node 下执行 js 文件
-
-VSCode 创建文件 abc.js，可以在 teminal 中执行，方法：
-
-```bash
-$ node abc.js
-```
-
-
-
-#### REPL
-
-#### 其他
-
-多行表达式
-
-下划线变量
-
-#### 回调函数
-
-```javascript
-var fs = require("fs"); //28/11/2021 有多少模块？每个模块有哪些函数？
-fs.readFile('input.txt', function (err, data) {
-    if (err) return console.error(err);
-    console.log(data.toString());
-});
-
-console.log("程序执行结束!");
-```
-
-Node.js 异步编程依托于回调来实现，回调函数在完成任务后就会被调用，Node 使用了大量的回调函数，Node 所有 API 都支持回调函数。
-
-例如，我们可以一边读取文件，一边执行其他命令，在文件读取完成后，我们将文件内容作为回调函数的参数返回。
-
-### PHP
-
-为了开始使用 PHP，找一个支持PHP和MySQL的Web主机，安装Web服务器、PHP及MySQL；
-
-如果您的服务器支持 PHP，只要在 web 目录中创建 .php 文件即可，服务器将自动为您解析这些文件。
-
-PHP 脚本在服务器上执行，然后将纯 HTML 结果发送回浏览器。
-
-```php
-<?php
-$txt="Hello world!";
-$x=5;
-$y=10.5;
-$z=$x+$y;
-echo $z;
-echo "变量 x 为: $x"; 
-
-function myTest()
-{
-    //global 关键字：在函数内调用函数外定义的全局变量
-    global $x,$y;
-    $y=$x+$y;
-}
-function myTest1()
-{
-    //所有全局变量存储在一个名为 $GLOBALS[index] 的数组中。 index 保存变量的名称。
-    $GLOBALS['y']=$GLOBALS['x']+$GLOBALS['y'];
-} 
-function myTest2()
-{
-    //static：希望某个局部变量不要被删除
-    static $x1=0;
-    echo $x1;
-    $x1++;
-    echo PHP_EOL;    // 换行符
-}
-function myTest3($x)
-{
-    echo $x;
-}
-
-MyTest3(6);
-//echo - 可以输出一个或多个字符串（字符串可以包含 HTML 标签）,快，没有返回值
-echo "<h2>PHP 很有趣!</h2>";
-echo "这是一个", "字符串，", "使用了", "多个", "参数。";
-$cars=array("Volvo","BMW","Toyota");
-echo "<br>";
-echo "我车的品牌是 {$cars[0]}";
-//print - 只允许输出一个字符串，返回值总为 1；使用方法类似echo
-print "<br>";
-print "我新车的品牌是 {$cars[1]}";
-
-$a = "Hello";
-$b = $a . " world!"; //.可以连接字符串
-?>
-```
-
-PHP 语句和 PHP 变量区分大小写。
-
-弱类型语言：不必向 PHP 声明该变量的数据类型，PHP 会根据变量的值，自动把变量转换为正确的数据类型；在强类型的编程语言中，我们必须在使用变量前先声明（定义）变量的类型和名称。
-
-PHP 中的 $_GET 和 $_POST 变量用于检索表单中的信息，比如用户输入。
-
-```html
-<html>
-<head>
-<meta charset="utf-8">
-<title>菜鸟教程(runoob.com)</title>
-</head>
-<body>
- 
-<form action="welcome.php" method="post">
-名字: <input type="text" name="fname">
-年龄: <input type="text" name="age">
-<input type="submit" value="提交">
-</form>
- 
-</body>
-</html>
-```
-
-当用户填写完上面的表单并点击提交按钮时，表单的数据会被送往名为 "welcome.php" 的 PHP 文件：
-
-```php
-欢迎<?php echo $_POST["fname"]; ?>!<br>
-你的年龄是 <?php echo $_POST["age"]; ?>  岁。
-```
-
-预定义的 **$_GET 变量**用于收集来自 method="get" 的表单中的值，从带有 GET 方法的表单发送的信息，对任何人都是可见的（会显示在浏览器的地址栏）在 HTML 表单中使用 method="get" 时，所有的变量名和值都会显示在 URL 中，所以在发送密码或其他敏感信息时，不应该使用；并且对发送信息的量也有限制，不能超过 2000 个字符。
-
-预定义的 **$_POST** 变量用于收集来自 method="post" 的表单中的值，从带有 POST 方法的表单发送的信息，对任何人都是不可见的（不会显示在浏览器的地址栏），并且对发送信息的量也没有限制，然而，默认情况下，POST 方法的发送信息的量最大值为 8 MB（可通过设置 php.ini 文件中的 post_max_size 进行更改）。
-
-预定义的 **$_REQUEST** 变量包含了$_GET、$POST和 $_COOKIE的内容，可用来收集通过 GET 和 POST 方法发送的表单数据。
-
-### MySQL
-
-可以运行于多个系统上，支持多种语言：C、C++、Python、Java、Perl、PHP、Eiffel、Ruby 和 Tcl 等；
-
-对PHP有很好的支持，PHP 是目前最流行的 Web 开发语言。
-
-```bash
-Rpm -qa | grep mysql //检测系统是否自带安装MySQL
-```
-
-如果你系统有安装，那可以选择进行卸载:
-
-```bash
-rpm -e mysql　　// 普通删除模式
-rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除
-```
-
-### Apache服务
-
-```bash
-httpd -v  //查看Apache版本
-
-sudo apachectl start //启动Apahe服务
-
-//Web服务根目录：Library/WebServer/Documents
-
-sudo apachectl stop //停止Apache服务
-
-php -v //查看php的版本
 ```
 
 

@@ -408,9 +408,29 @@ head, title, meta, style, script, noscript, base, link
 
 body, h1~h7, br, hr, p, div, a, img, 
 
+pre, figure, 
+
 label：扩大点击区域
 
 template: 
+
+``` html
+<figure>
+  <pre role="img" aria-label="ASCII COW">
+      ___________________________
+  &lt; I'm an expert in my field. &gt;
+      ---------------------------
+          \   ^__^
+           \  (oo)\_______
+              (__)\       )\/\
+                  ||----w |
+                  ||     ||
+  </pre>
+  <figcaption id="cow-caption">
+    A cow saying, "I'm an expert in my field." The cow is illustrated using preformatted text characters.
+  </figcaption>
+</figure>
+```
 
 搜索引擎使用**标题**为网页的结构和内容编索引，用户可以通过标题来快速浏览网页，所以标题应该用来呈现文档结构；
 
