@@ -1,3 +1,6 @@
+// Object.defineProperty - 给对象添加属性
+get set
+
 ### Agile
 
 Lean Startup
@@ -295,7 +298,7 @@ push / pop / unshift / shift / splice / length / indexOf / lastIndexOf / split
 join / reduce / reduceRight / sort / reverse / some / every / foreach / 
 map / filter / slice / concat -- pure functions
 
-```
+```javasript
 var ary = ['A', 'B', 'C', 'D', 'E']
 
 ary.some(function(item){
