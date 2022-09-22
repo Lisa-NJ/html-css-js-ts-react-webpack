@@ -19,6 +19,10 @@ li{
   margin-left: 10px; /* 与左边的内容分开 */
 }
 
+div[class|=col]{ /* 选中 class 以 col 开始的 div  */
+  border:1px solid; 
+}
+
 a:href { /* 只有 a 标签中设置了 href 属性的会被选中 a:visited a:hover */
   color: red;
   text-decoration: none;/* 去掉 超链接 下面的下划线 */
