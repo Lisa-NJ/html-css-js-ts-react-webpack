@@ -2730,6 +2730,8 @@ arr.sort(function(a,b) {
   return Math.random()-0.5
 })
 
+Math.random() - 生成 0～1 范围内的随机数，不包含 1
+
 var newArr = arr.slice(1,2)//从第1位开始，到第2位
 var newArr1 = arr.slice(2) //从第2位开始截取，到末尾
 var newArr2 = arr.slice()  //整个截取

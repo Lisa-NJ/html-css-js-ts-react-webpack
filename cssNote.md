@@ -1,7 +1,13 @@
+隐藏的几种实现:
+ 1. display:none
+ 2. visibility: hidden
+ 3. transparent: 0
+
 ```css
 <link href="style.css" rel="stylesheet"/>  //html 文件引入 css 的方式，等价于
 <link href="style.css" rel="stylesheet" type="text/css"/>
 <p class="related first-li"></p>  //可以设置同时属于多个 class 
+<p class="related" class="first-li"></p>  //只有第一个样式被应用
 
 /* 内联样式 */
 <p style="color:red; font-size:20px">少小离家</p>
