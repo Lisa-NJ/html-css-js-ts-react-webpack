@@ -325,6 +325,9 @@ ary.slice(2, 4)
 
 var ary1 = ['G', 'H']
 ar.concat(ary, ary1)
+
+let index = 'abcde'.indexOf('a') //0
+index = 'abcde'.indexOf('') //0 ***
 ```
 
 #### ES6 新特性
