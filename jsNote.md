@@ -2836,7 +2836,7 @@ Error.name  的六种值对应的信息：
 
 ##### Date 日期对象 
 
-第三方库：Moment.js Dayjs
+第三方库：Moment.js Day.js
 
 32/42 Jomy - 14'
 
