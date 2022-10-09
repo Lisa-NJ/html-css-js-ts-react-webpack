@@ -1,6 +1,8 @@
 // Object.defineProperty - 给对象添加属性
 get set
 
+console.dir(Vue)
+
 ### Agile
 
 Lean Startup
@@ -1800,17 +1802,17 @@ function Person(name, age, gender){
 解决方法如下，引入 **原型对象** 的概念
 
 ```javascript
-Person.Prototype.sayName = function(){
+Person.prototype.sayName = function(){
   alert("Hello, I am " + this.name);
 }
 
 var per = new Person("sun", 19, "male");
-console.log(per.__proto__ == Person.Prototype); //'true'
+console.log(per.__proto__ === Person.prototype); //'true'
 ```
 
-我们所创建的任何一个函数，解析器都会向其添加一个属性： Prototype，指向 原型对象。
+我们所创建的任何一个函数，解析器都会向其添加一个属性： prototype，指向 原型对象。
 
-如函数作为普通函数调用，Prototype 没有任何作用；
+如函数作为普通函数调用，prototype 没有任何作用；
 
 如函数作为构造函数调用时，它所创建的对象中都会有一个隐含的属性 __ proto__，指向该构造函数的原型对象。
 
@@ -1840,7 +1842,6 @@ function Car(){
   //var this = {  
   //  __proto__ : Car.prototype
 	//}
-}
 }
 var car = new Car()
 consolo.log(car.carName) //Toyota
