@@ -1372,7 +1372,9 @@ $ npm i -D babel-cli babel-preset-ent browserif
 $ npx babel src/js -d dist/js --presets=babel-preset-env
 ```
 
-dist/js 目录下的文件是基于 commonJS 模块规范
+dist/js 目录下的文件是基于 commonJS 模块规范 (不同于 ES6 的另一种模块规范)
+
+webpack 是基于 NodeJS 的，采用的是 commonJS 模块规范
 
 3.打包
 

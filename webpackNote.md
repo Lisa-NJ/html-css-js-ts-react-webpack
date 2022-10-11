@@ -107,7 +107,7 @@ devServer: {
 
 css-loader：把  .css 文件打包进 bundle.js
 
-style-loader：把 .css 文件定义好的样式 存入 index.html <head> / <style> 里面
+style-loader：把 .css 文件定义好的样式 存入 index.html < head> / < style> 里面
 
 安装 css-loader、style-loader
 
