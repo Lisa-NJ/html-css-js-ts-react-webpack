@@ -332,6 +332,13 @@ let index = 'abcde'.indexOf('a') //0
 index = 'abcde'.indexOf('') //0 ***
 ```
 
+#### 常见登录鉴权方案
+
+https://cloud.tencent.com/developer/article/1745622
+HTTP 是一个无状态协议，所以客户端每次发出请求时，下一次请求无法得知上一次请求所包含的状态数据。
+HTTP 提供一个用于权限控制和认证的通用框架。最常用的HTTP认证方案是HTTP Basic Authentication
+
+
 ####  AJAX 编程
 
 Ajax主要的作用：可以部分刷新页面，而不用重新刷新整个网页；
