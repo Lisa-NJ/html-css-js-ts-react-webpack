@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>navigator.geolocation</title>
+<style type="text/css">
+    h4 {color:red;}
+    p {color:rgb(12, 164, 200);}
+
+</style>
+</head>
+
+
+<body>
+	<p id="demo">Get Your Location（Might take a while）：</p>
+	<button onclick="getLocation()">Click Me</button>
+
+	<script>
+		var x=document.getElementById("demo");
+		function getLocation()
+		{
+			if (navigator.geolocation)
+			{
+				navigator.geolocation.getCurrentPosition(showPosition);
+			}
+			else
+			{
+				x.innerHTML="Your Browser doesn't support";
+			}
+		}
+		
+		function showPosition(position)
+		{
+			x.innerHTML="Lat:" + position.coords.latitude + 
+			"<br>Lon:" + position.coords.longitude;	
+		}
+		</script>
+		
+</body>
