@@ -2720,7 +2720,7 @@ es6.0 很强大，加了不少
 
 不改变原数组 
 
-​	-- concat, join, split, toString, slice
+​	-- concat, join, split, toString, slice, find
 
 ```js
 var arr = []
@@ -2778,6 +2778,22 @@ var str2 = 'tencent'
 var str3 = 'toutiao'
 var arr = [str, str1, str2, str3]
 arr.join("")
+
+//The find() method returns the value of the first element that passes a test.
+const ages = [3, 10, 18, 20];
+
+function checkAge(age) {
+  return age > 18;
+}
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = ages.find(checkAge);
+}
+
+// The find() method executes a function for each array element.
+// The find() method returns undefined if no elements are found.
+// The find() method does not execute the function for empty elements.
+// The find() method does not change the original array.
 ```
 
 2维数组刷算法题目时常用
