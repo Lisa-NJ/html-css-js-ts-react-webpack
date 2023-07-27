@@ -1,3 +1,7 @@
+transform: skewX(20deg) // 沿着X轴的2D倾斜变换
+transform: translateX(x) // Defines a translation, using only the value for the X-axis
+transform: translateX(-30%) // 
+
 隐藏的几种实现:
  1. display:none
  2. visibility: hidden
@@ -39,6 +43,7 @@ a:href { /* 只有 a 标签中设置了 href 属性的会被选中 a:visited a:h
 }
 #container {
   width: 800px;
+  // set the margin property to auto to horizontally center the element within its container.
   margin: auto; /* 会将左右自动调成相同 */
 }
 /* 交集选择器
@@ -524,7 +529,7 @@ import styled from "styled-components";
 const Panel = styled.div`
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 50%;                              
   transform: translate(-50%, -50%);
 `;
 ```
@@ -742,92 +747,6 @@ footer {
   clear: both; //清除 float
 }
 ```
-
-
-​	
-​	![Screen Shot 2022-04-20 at 10.29.54 am](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-20 at 10.29.54 am.png)
-
-
-
-![Screen Shot 2022-04-27 at 2.47.32 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 2.47.32 pm.png)
-
-![Screen Shot 2022-04-27 at 2.50.30 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 2.50.30 pm.png)
-
-![Screen Shot 2022-04-27 at 3.05.04 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 3.05.04 pm.png)
-
-![Screen Shot 2022-04-27 at 3.36.07 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 3.36.07 pm.png)
-
-![Screen Shot 2022-04-27 at 3.47.31 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 3.47.31 pm.png)
-
-![Screen Shot 2022-04-27 at 4.03.27 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 4.03.27 pm.png)
-
-![Screen Shot 2022-04-27 at 4.08.32 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 4.08.32 pm.png)
-
-![Screen Shot 2022-04-27 at 5.25.31 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 5.25.31 pm.png)
-
-![Screen Shot 2022-04-27 at 5.25.31 pm 1](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 5.25.31 pm 1.png)
-
-![Screen Shot 2022-04-27 at 5.28.04 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 5.28.04 pm.png)
-
-![Screen Shot 2022-04-27 at 5.31.04 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 5.31.04 pm.png)
-
-
-
-![Screen Shot 2022-04-27 at 5.47.12 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 5.47.12 pm.png)
-
-![Screen Shot 2022-04-27 at 5.49.41 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 5.49.41 pm.png)
-
-![Screen Shot 2022-04-27 at 6.21.50 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 6.21.50 pm.png)
-
-![Screen Shot 2022-04-27 at 6.22.40 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 6.22.40 pm.png)
-
-![Screen Shot 2022-04-27 at 6.32.33 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 6.32.33 pm.png)
-
-
-
-![Screen Shot 2022-04-27 at 6.34.53 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 6.34.53 pm.png)
-
-![Screen Shot 2022-04-27 at 7.04.26 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 7.04.26 pm.png)
-
-![Screen Shot 2022-04-27 at 7.06.01 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 7.06.01 pm.png)
-
-![Screen Shot 2022-04-27 at 8.11.46 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-27 at 8.11.46 pm.png)
-
-![Screen Shot 2022-04-28 at 1.59.28 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-28 at 1.59.28 pm.png)
-
-![Screen Shot 2022-04-28 at 2.00.59 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-28 at 2.00.59 pm.png)
-
-![Screen Shot 2022-04-28 at 2.02.45 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-28 at 2.02.45 pm.png)
-
-![Screen Shot 2022-04-28 at 2.03.18 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-28 at 2.03.18 pm.png)
-
-![Screen Shot 2022-04-28 at 2.50.02 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-28 at 2.50.02 pm.png)
-
-![Screen Shot 2022-04-28 at 2.53.03 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-28 at 2.53.03 pm.png)
-
-![Screen Shot 2022-04-28 at 2.59.25 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-28 at 2.59.25 pm.png)
-
-![Screen Shot 2022-04-28 at 10.40.43 am](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-28 at 10.40.43 am.png)
-
-![Screen Shot 2022-04-28 at 10.42.37 am](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-28 at 10.42.37 am.png)
-
-![Screen Shot 2022-04-28 at 11.41.51 am](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-28 at 11.41.51 am.png)
-
-![Screen Shot 2022-04-28 at 11.42.46 am](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-28 at 11.42.46 am.png)
-
-![Screen Shot 2022-04-28 at 11.47.00 am](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-28 at 11.47.00 am.png)
-
-![Screen Shot 2022-04-28 at 11.49.43 am](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-28 at 11.49.43 am.png)
-
-![Screen Shot 2022-04-28 at 11.52.32 am](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-28 at 11.52.32 am.png)
-
-![Screen Shot 2022-04-28 at 11.53.24 am](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-28 at 11.53.24 am.png)
-
-![Screen Shot 2022-04-28 at 11.53.55 am 1](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-28 at 11.53.55 am 1.png)
-
-![Screen Shot 2022-04-28 at 12.25.47 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-28 at 12.25.47 pm.png)
-
-![Screen Shot 2022-04-28 at 12.26.54 pm](/Users/lisahuang/Desktop/css截图/Screen Shot 2022-04-28 at 12.26.54 pm.png)
 
 #### 其他
 
