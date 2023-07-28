@@ -2,6 +2,27 @@ transform: skewX(20deg) // 沿着X轴的2D倾斜变换
 transform: translateX(x) // Defines a translation, using only the value for the X-axis
 transform: translateX(-30%) // 
 
+background-size: auto|length|percentage|cover|contain|initial|inherit;
+
+outline-style
+outline-width
+outline-color
+outline: 4px dotted red;
+
+// object-fit:specify how an <img> or <video> should be resized to fit its container.
+object-fit: fill|contain|cover|scale-down|none|initial|inherit;
+
+1.border占用空间，outline不占用空间，不会影响元素的尺寸和位置
+2.border 可应用于几乎所有有形的html元素，而 outline 是针对链接、表单控件和ImageMap等元素设计。从而另一个区别也可以推理出，那就是： outline 的效果将随元素的 focus 而自动出现，相应的由 blur 而自动消失。这些都是浏览器的默认行为，无需JavaScript配合CSS来控制。
+
+font-size
+fone-family
+font-style
+font-weight
+font-variant
+line-height
+text-transform: none|capitalize|uppercase|lowercase|initial|inherit;
+
 隐藏的几种实现:
  1. display:none
  2. visibility: hidden
@@ -512,9 +533,14 @@ absolute 绝对定位的元素不再存在于正常文档布局流中，[`top`](
 绝对定位元素的“包含元素“ - 取决于绝对定位元素的父元素的position属性；如果所有的父元素都没有显式地定义position属性，那么所有的父元素默认情况下position属性都是static，绝对定位元素会被放在< html>元素的外面，并且根据浏览器视口来定位；绝对定位元素在HTML源代码中，是被放在< body>中的，但是在最终的布局里面，它离页面(而不是< body>)的左边界、上边界有30px的距离。
 
 ```css
-/* static - 默认值，relative - 配合 top left right bottom 使用 */
+/* static - 默认值, positioned according to the normal flow of the page
+，relative - 配合 top left right bottom 使用, is positioned relative to its normal position 
+，absolute - positioned relative to the nearest positioned ancestor or the document body
+，fixed - positioned relative to the viewport,
+，sticky - positioned based on the user's scroll position
+*/
 .positioned {
-  position: static; /* relative, absolute */
+  position: static; /* relative, absolute, sticky, fixed */
   background: yellow;
 }
 ```
@@ -716,7 +742,8 @@ flex-basis:"30%";/* - 相对于其父弹性盒容器主轴尺寸的百分数 */
 flex-basis:content; /* - 基于 flex 的元素的内容自动调整大小 */
 /* 其他值包括：fit-content, max-content, min-content, fill */
 
-text-align: center; /*定义行内内容如何相对它的块父元素对齐 */
+text-align: center; /*定义行内内容如何相对它的块父元素对齐 left|right|center|justify|initial|inherit
+	the horizontal alignment of text in an element */
 ```
 
 【Gird】- 二维布局
