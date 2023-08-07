@@ -1,3 +1,8 @@
+Window：requestAnimationFrame() 
+	- https://developer.mozilla.org/zh-CN/docs/Web/API/window/requestAnimationFrame
+Performance: now() 
+	- 
+
 // Object.defineProperty - 给对象添加属性
 get set
 
@@ -296,9 +301,11 @@ console.log('  ' + Object.keys(pkg.devDependencies).join('\n  '));
 ```
 
 [JS Array operations]
-push / pop / unshift / shift / splice / length / indexOf / lastIndexOf / split
-join / reduce / reduceRight / sort / reverse / some / every / foreach / 
-map / filter / slice / concat -- pure functions
+push    / pop   / lastIndexOf /
+unshift / shift / indexOf /  split / splice / length / 
+join    / reduce / reduceRight / sort / reverse / 
+some    / every  / foreach / 
+map     / filter / slice / concat -- pure functions
 
 ```javasript
 var ary = ['A', 'B', 'C', 'D', 'E']
