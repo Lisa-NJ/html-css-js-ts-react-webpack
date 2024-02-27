@@ -462,6 +462,8 @@ Promise 构造函数只有一个参数，是一个函数，这个函数在构造
 
 Promise 类有 .then() .catch() 和 .finally() 三个方法，这三个方法的参数都是一个函数，.then() 可以将参数中的函数添加到当前 Promise 的正常执行序列，.catch() 则是设定 Promise 的异常处理序列，.finally() 是在 Promise 执行的最后一定会执行的序列。 .then() 传入的函数会按顺序依次执行，有任何异常都会直接跳到 catch 序列。
 
+当需要多次顺序执行异步操作的时候，例如，如果想通过异步方法先后检测用户名和密码，需要先异步检测用户名，然后再异步检测密码的情况下就很适合 Promise。
+
 **Promise 封装 AJAX 请求**
 
 ```js
@@ -523,7 +525,8 @@ const result = p.then(function(value){
 }, function(reason){
   console.error(reason)
 })
-//-----------------------------------------//Promise.prototype.then 返回结果
+//-----------------------------------------
+//Promise.prototype.then 返回结果
 const result1 = p.then(function(value){
   console.log(value)
   //1. 非 Promise 类型的属性
