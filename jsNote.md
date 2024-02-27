@@ -60,6 +60,10 @@ JavaScript 社区维护
 
 ECMA 欧洲计算机制造协会 - propose 新功能
 
+ASP (Active Server Pages) 
+	- 用于创建动态网页的服务器端脚本技术, MS, 逐渐被更现代的服务器端脚本技术如 ASP.NET、PHP、Node.js 等所取代
+	- ASP 允许开发人员在 HTML 页面中嵌入服务器端脚本代码，这些代码通常使用 VBScript（Visual Basic Scripting Edition）或 JScript（JavaScript 的微软实现）编写。当用户请求包含 ASP 代码的页面时，服务器会执行脚本并生成动态内容，然后将生成的 HTML 页面发送给用户的浏览器。这样，用户就可以看到根据其请求动态生成的页面内容。
+	
 **解释 JS**
 
 浏览器（chrome 兼容性好稳定，FF 性能好，Edge 性能更好，IE11，360安全，QQ浏览器， Safari 省电）
@@ -348,7 +352,9 @@ HTTP 提供一个用于权限控制和认证的通用框架。最常用的HTTP�
 
 ####  AJAX 编程
 
-Ajax主要的作用：可以部分刷新页面，而不用重新刷新整个网页；
+AJAX - Asynchronous Javascript XML - 异步JS和XML
+
+Ajax主要的作用：可以部分刷新页面，而不用重新刷新整个网页； 2005
 
 xhr （不常用）， 
 
@@ -358,7 +364,7 @@ axios（对xhr封装，推荐！），
 
 fetch（与xhr平级，不常用，包了两层，兼容性差）
 
-##### XMLHttpReques
+##### XMLHttpRequest
 
 需要使用到  JS、xhr-浏览器提供的构造函数、状态码、http等
 
@@ -396,7 +402,7 @@ xhr.onerror = function () {
     document.getElementById("demo").innerHTML="请求出错";
 }
  
-// 发送异步 GET 请求
+// 发送异步 GET 请求, open() 方法的 url 参数是服务器上文件的地址
 xhr.open("GET", "https://www.runoob.com/try/ajax/ajax_info.txt", true); // 配置请求信息
 xhr.send();
 ```
@@ -404,6 +410,13 @@ xhr.send();
 **XMLHttpRequest** 常常用于请求来自远程服务器上的 XML 或 JSON 数据。
 
 开发中不怎么使用，太麻烦！
+
+如果需要像 HTML 表单那样 POST 数据，请使用 setRequestHeader() 来添加 HTTP 头。然后在 send() 方法中规定您希望发送的数据：
+```
+xmlhttp.open("POST","/try/ajax/demo_post2.php",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("fname=Henry&lname=Ford");
+```
 
 ##### Promise
 
@@ -603,6 +616,7 @@ https://www.bilibili.com/video/BV1jv411P7Hp?from=search&seid=5910765473136513028
 //参考： [JavaScript 你理解Promise吗](https://www.bilibili.com/video/BV1QV411a7Hu?spm_id_from=333.999.0.0) --技术蛋老师
 
 //参考： [菜鸟教程](https://www.runoob.com/js/js-promise.html)
+
 
 #### ES6 新特性
 
