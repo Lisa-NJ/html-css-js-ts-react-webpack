@@ -1,34 +1,25 @@
 <!--声明版本 HTML5-->
 <!DOCTYPE html>
 <html>
+
 <head>
-<!--utf-8设置可以在页面正确显示中文-->
-<meta charset="utf-8">
-<!--title出现在页面标签-->
-<title>LISA学JS-李立超 2021(尚硅谷.com)</title>
-<style type="text/css">
-    h4 {color:red;}
-    p {color:rgb(12, 164, 200);}
+	<!--utf-8设置可以在页面正确显示中文-->
+	<meta charset="utf-8">
+	<!--title出现在页面标签-->
+	<title>LISA学JS-李立超 2021(尚硅谷.com)</title>
+	<style type="text/css">
+		h4 {
+			color: red;
+		}
 
-</style>
-
-<script type="text/javascript" src = "JS/script.js">
-	/*
-	alert("今天是2021年12月29日");
-	document.write("袋鼠岛");
-	console.log("2021-12-29");
-	*/
-	console.log("2021-12-29"); //该行代码不会执行，被浏览器忽略
-	
-</script>
-<script>
-	alert("今天是2021年12月29日");
-</script>
-
+		p {
+			color: rgb(12, 164, 200);
+		}
+	</style>
+	<script>
+		alert("今天是2021年12月29日");
+	</script>
 </head>
-
-
-
 
 <body>
 	<button onclick="alert('点击按钮');">按钮</button>
@@ -36,5 +27,43 @@
 	<a href="javascript:alert('点击链接');">点击链接</a>
 
 	<a href="javascript:;">空链接</a>
+
+	<button id="ajaxBtn">AJAX</button>
+
+	<script>
+		var sendAJAX = () => {
+			const req = new XMLHttpRequest();
+			var url = "story.md";
+			req.open('GET', url);
+			req.onreadystatechange = function () {       // onreadystatechange
+				/* .readyState 属性表示当前状态
+				值 描述
+				0 代理被创建，但尚未调用 open() 方法。
+				1 open() 方法已经被调用。
+				2 send() 方法已经被调用，并且头部和状态已经可获得。
+				3 正在响应
+				4 响应已完毕
+				*/
+				console.log(req.readyState);
+				if (req.readyState === 4) {
+					if (req.status >= 200 && req.status < 300) {
+						console.log(req.responseText);
+					}
+					else {
+						console.log(`Read ${url} and return status = ${req.status}`);
+					}
+				}
+			}
+
+			req.send();
+
+		}
+		var btn = document.getElementById("ajaxBtn");  // getElementById(${id})
+		btn.addEventListener('click', sendAJAX);
+		/** addEventListener 函数 第二个参数的两种形式：
+		 * 1. 直接完整定义 (普通 or 箭头)
+		 * 2. 使用函数名 + 另外定义函数体（普通function方式 or 箭头函数 var fun = ()=>{...}）
+		*/
+	</script>
 
 </body>
